@@ -1,0 +1,15 @@
+<h1><%= @search %></h1>
+<table border='1'>
+    <tr>
+        <th>User avatar</th>
+        <th>Rep name</th>
+        <th>Score</th>
+    </tr>
+    <% @reps.each do |rep| %>
+        <tr>
+            <td><%= link_to image_tag(rep['owner']['avatar_url'], height: '100', width: '100'), rep['owner']['html_url'] %></td>
+            <td><%= link_to sanitize(rep['name']), rep['html_url'] %></td>
+            <td><%= rep['score'] %></td>
+        </tr>
+    <% end %>
+</table>
